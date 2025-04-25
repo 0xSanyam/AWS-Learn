@@ -1,0 +1,14 @@
+{
+  "name": "AWS Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-azureterraform",
+        "amazonwebservices.aws-toolkit-vscode"
+      ]
+    }
+  }
+}

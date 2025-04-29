@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+echo "List Buckets"
+
+aws s3api list-buckets --output json | jq -r '.Buckets | sort_by(.CreationDate) | reverse[] | "\(.Name)"' | awk 'NR<=5 { print } END { if (NR>5) print "..." }'

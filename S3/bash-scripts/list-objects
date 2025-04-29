@@ -1,0 +1,13 @@
+#! /usr/bin/env bash
+echo "List Objects"
+
+# Check for bucket name
+if [ -z "$1" ]; then
+    echo "No bucket name is provided eg. ./bucket my-bucket-name"
+    exit 1
+fi
+
+BUCKET_NAME=$1
+
+# https://docs.aws.amazon.com/cli/latest/reference/s3api/list-objects-v2.html
+aws s3api list-objects-v2 --bucket $BUCKET_NAME

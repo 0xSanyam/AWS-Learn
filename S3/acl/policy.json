@@ -1,0 +1,17 @@
+{
+    "Grants": [
+      {
+        "Grantee": {
+          "DisplayName": "Redacted",
+          "ID": "Redacted",
+          "Type": "CanonicalUser"
+        },
+        "Permission": "FULL_CONTROL"
+      }
+    
+    ],
+    "Owner": {
+      "DisplayName": "Redacted",
+      "ID": "Redacted"
+    }
+  }

@@ -1,0 +1,19 @@
+{
+    "Statement": [
+       {
+          "Effect": "Deny",
+          "Principal": {
+             "AWS": "arn:aws:iam::903709589305:user/admin_cross"
+          },
+          "Action": [
+                "s3:ListBucket",
+                "s3:PutObject",
+                "s3:GetObject"
+            ],
+          "Resource": [
+                "arn:aws:s3:::deny-bucket-sany",
+                "arn:aws:s3:::deny-bucket-sany/*"
+            ]
+       }
+    ]
+ }

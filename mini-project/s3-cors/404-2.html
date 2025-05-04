@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Sanyam's Second Website</title>
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+            --accent: #fd79a8;
+            --error: #ff7675;
+        }
+        body {
+            font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--dark) 0%, #1e272e 100%);
+        }
+        .container {
+            max-width: 800px;
+            padding: 3rem;
+            text-align: center;
+        }
+        .error-graphic {
+            font-size: 8rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(to right, var(--error), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+            color: var(--error);
+            font-weight: 800;
+        }
+        h2 {
+            font-size: 2rem;
+            color: var(--light);
+            margin: 1rem 0;
+        }
+        p {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 3rem;
+            opacity: 0.8;
+        }
+        .cta-button {
+            color: var(--light);
+            background-color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+        }
+        .cta-button:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(253, 121, 168, 0.4);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="error-graphic">⚡</div>
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>We couldn't find the page you're looking for.</p>
+        <a href="/" class="cta-button">Country Roads! Take Me Home!!</a>
+    </div>
+</body>
+</html>

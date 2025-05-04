@@ -3,7 +3,7 @@
        {
           "Effect": "Deny",
           "Principal": {
-             "AWS": "arn:aws:iam::903709589305:user/admin_cross"
+             "AWS": "arn:aws:iam::123456789012:user/redacted"
           },
           "Action": [
                 "s3:ListBucket",

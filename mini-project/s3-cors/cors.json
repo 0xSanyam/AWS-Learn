@@ -1,0 +1,11 @@
+{
+    "CORSRules": [
+      {
+        "AllowedOrigins": ["http://second-cors-sany.s3-website.ap-south-1.amazonaws.com"],
+        "AllowedHeaders": ["*"],
+        "AllowedMethods": ["PUT", "POST", "DELETE"],
+        "MaxAgeSeconds": 3000,
+        "ExposeHeaders": ["x-amz-server-side-encryption"]
+      }
+    ]
+  }

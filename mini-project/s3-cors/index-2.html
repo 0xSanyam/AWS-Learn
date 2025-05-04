@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanyam's Second Website</title>
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+            --accent: #fd79a8;
+        }
+        body {
+            font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--dark) 0%, #1e272e 100%);
+        }
+        .container {
+            max-width: 800px;
+            padding: 3rem;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin: 0 0 1rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+        }
+        p {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+        .cta-button {
+            color: var(--light);
+            background-color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+        }
+        .cta-button:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(253, 121, 168, 0.4);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to my second website</h1>
+        <p>Sanyam's Second Website!</p>
+        <a href="hello" class="cta-button">Dive In</a>
+    </div>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/send -->
+    <!-- https://www.w3schools.com/js/js_json_http.asp -->
+    <script type="text/javascript">
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", "https://0gymm1tsb6.execute-api.ap-south-1.amazonaws.com/prod/hello-cors", true);
+      // Send the proper header information along with the request
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            try {
+                const results = JSON.parse(xhr.responseText);
+                console.log('results', results);
+            } catch (e) {
+                // Fallback: Try to make it valid JSON by fixing quotes (not 100% safe for all cases)
+                const fixed = xhr.responseText.replace(/([{,])\s*([^"{}\[\]:,]+)\s*:/g, '$1"$2":')  // quote unquoted keys
+                                              .replace(/:\s*([^"{}\[\],]+)\s*([,}])/g, ': "$1"$2'); // quote unquoted string values
+            try {
+                const results = JSON.parse(fixed);
+                console.log('results', results);
+            } catch (err) {
+                console.error('Still invalid JSON after fix attempt:', xhr.responseText);
+        }
+    }
+}
+      };
+      xhr.send(JSON.stringify({}));
+    </script>
+</body>
+</html>

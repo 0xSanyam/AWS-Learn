@@ -25,7 +25,7 @@ echo "Hello file" > file.txt
 aws s3api put-object --bucket new-encryption-sany \
 --key file.txt --body file.txt \
 --server-side-encryption aws:kms \
---ssekms-key-id 010b9318-c82e-4bc8-9134-15aa6cf409f9
+--ssekms-key-id redacted
 ```
 
 ### Checking the object and verifying the encryption method

@@ -36,7 +36,7 @@ aws s3api head-object --bucket new-encryption-sany --key file.txt --output json
 
 ## Putting a object in bucket with SSE-C encryption
 
-<!-- https://catalog.us-east-1.prod.workshops.aws/workshops/aad9ff1e-b607-45bc-893f-121ea5224f24/en-US/s3/serverside/ssec -->
+https://catalog.us-east-1.prod.workshops.aws/workshops/aad9ff1e-b607-45bc-893f-121ea5224f24/en-US/s3/serverside/ssec
 
 ```sh
 echo "Hello SSE-C" > sse-c.txt

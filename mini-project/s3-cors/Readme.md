@@ -22,7 +22,7 @@ aws s3api get-public-access-block --bucket new-cors-sany --output json
 
 ## Creating Bucket Policy
 
-<!-- https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-bucket-policy.html -->
+https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-bucket-policy.html
 ```sh
 aws s3api put-bucket-policy --bucket new-cors-sany --policy file://policy.json
 ```
@@ -76,7 +76,7 @@ aws s3api get-public-access-block --bucket second-cors-sany --output json
 
 ## Creating Bucket Policy
 
-<!-- https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html -->
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html
 ```sh
 aws s3api put-bucket-policy --bucket second-cors-sany --policy file://policy-2.json
 ```
@@ -120,7 +120,7 @@ curl -X POST -H "Content-Type: application/json" https://0gymm1tsb6.execute-api.
 
 ## Setting CORS on the bucket
 
-<!-- https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-bucket-cors.html -->
+https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-bucket-cors.html
 ```sh
 aws s3api put-bucket-cors --bucket second-cors-sany --cors-configuration file://cors.json
 ```

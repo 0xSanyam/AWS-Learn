@@ -4,7 +4,7 @@
 aws s3 mb s3://acl-sany01
 ```
 
-<!--- https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-public-access-block.html) -->
+https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-public-access-block.html
 ## Turn off Block Public Access for ACLs
 
 ```sh
@@ -19,7 +19,7 @@ aws s3api put-public-access-block \
 aws s3api get-public-access-block --bucket acl-sany01 --output json
 ```
 
-<!-- https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-bucket-ownership-controls.html -->
+https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-bucket-ownership-controls.html
 ## Change Bucket Ownership
 
 ```sh

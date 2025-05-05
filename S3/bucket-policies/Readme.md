@@ -15,7 +15,7 @@ aws s3 cp hello.txt s3://deny-bucket-sany
 
 ## Create buckets policy
 
-<!-- https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-bucket-policy.html -->
+https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-bucket-policy.html
 ```sh
 aws s3api put-bucket-policy --bucket bucket-policy-sanyy --policy file://policy.json
 aws s3api put-bucket-policy --bucket deny-bucket-sany --policy file://deny-policy.json

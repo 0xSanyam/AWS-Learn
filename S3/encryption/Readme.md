@@ -54,7 +54,7 @@ aws s3 cp s3://new-encryption-sany/sse-c.txt ssec-downloaded.txt --sse-c AES256 
 cat ssec-downloaded.txt
 ```
 
-## Cleanup
+# Cleanup
 
 ```sh
 aws s3 rm s3://new-encryption-sany --recursive

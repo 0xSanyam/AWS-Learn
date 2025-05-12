@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Creating a role to assume and an accessable resource
+Parameters:
+  BucketName:
+    Type: String
+    Default: "sts-sany-new"
+Resources:
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: !Ref BucketName
+  STSRole:   
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS: "arn:aws:iam::842517499591:user/sts-joe"
+            Action:
+              - 'sts:AssumeRole'
+      Path: /
+      Policies:
+        - PolicyName: s3access
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action: '*'
+                Resource: [
+                  !Sub 'arn:aws:s3:::*',
+                  !Sub 'arn:aws:s3:::${BucketName}',
+                  !Sub 'arn:aws:s3:::${BucketName}/*'
+                ]

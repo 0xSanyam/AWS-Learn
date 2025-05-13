@@ -36,6 +36,9 @@ fi
 # Detaching the IGW
 aws ec2 detach-internet-gateway --internet-gateway-id $IGW_ID --vpc-id $VPC_ID
 
+# Deleting IGW
+aws ec2 delete-internet-gateway --internet-gateway-id $IGW_ID
+
 # Dissaociating subnet
 aws ec2 disassociate-route-table --association-id $ASSOCIATE_ID
 

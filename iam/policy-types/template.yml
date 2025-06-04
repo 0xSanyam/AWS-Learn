@@ -1,0 +1,46 @@
+Resources:
+  # https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-user.html
+  MyUser:
+    Type: AWS::IAM::User
+    Properties: 
+      UserName: 'new-temp-user'
+      ManagedPolicyArns: 
+        - arn:aws:iam::aws:policy/job-function/ViewOnlyAccess
+      # Customer Policy
+      Policies:
+        - PolicyName: new-temp-policy
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+                - Sid: IamListAccess
+                  Effect: Allow
+                  Action:
+                  - 'iam:ListRoles'
+                  - 'iam:ListUsers'
+                  Resource: '*'
+  # https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-policy.html#aws-resource-iam-policy--seealso
+  MyInlinePolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: TempInlinePolicy
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action: 'ec2:*'
+            Resource: '*'
+      Users:
+        - !Ref MyUser
+  # https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-userpolicy.html#aws-resource-iam-userpolicy--examples
+  SecondInlinePolicy:
+    Type: 'AWS::IAM::UserPolicy'
+    Properties:
+      PolicyName: TempInlinePolicySecond
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action: 's3:*'
+            Resource: '*'
+      UserName: !Ref MyUser
+    
